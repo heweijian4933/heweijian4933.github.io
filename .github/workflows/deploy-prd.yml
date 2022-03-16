@@ -14,11 +14,12 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - uses: actions/checkout@v2
+            - name: checkout to corresponding branch
+              uses: actions/checkout@v2
             - name: Use Node.js
               uses: actions/setup-node@v1
               with:
-                  node-version: 12 # 尽量和线上机 node 版本保持一直
+                  node-version: 14 # 尽量和线上机 node 版本保持一直
             - name: lint and test # 测试
               run: |
                   npm i
